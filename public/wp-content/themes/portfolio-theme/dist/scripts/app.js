@@ -1,3 +1,4 @@
-console.log('test');
+var $ = jQuery;
 
+$('.js-carousel').slick();
 

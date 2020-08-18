@@ -34,6 +34,17 @@ table {
 	border-spacing: 0;
 }
 
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1;
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto', sans-serif;
+}
+
 .container {
 	max-width: 1200px;
 	margin: 0 auto;

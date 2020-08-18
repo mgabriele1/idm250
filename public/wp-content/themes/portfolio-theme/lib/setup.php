@@ -16,7 +16,8 @@ add_action('after_setup_theme', 'add_post_thumbnails_support');
 */
 function include_css_files() {
     // Example of including an external link
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+    wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
+    wp_enqueue_style('slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
 
     // Example of including a style local to your theme root
     wp_enqueue_style('idm250-css', get_template_directory_uri() . '/dist/css/style.css');
@@ -31,7 +32,11 @@ add_action('wp_enqueue_scripts', 'include_css_files');
 * @link https://developer.wordpress.org/reference/functions/wp_enqueue_style/
 */
 function include_js_files() {
-    wp_enqueue_script('idm250-js', get_template_directory_uri() . '/dist/scripts/app.js', [], false, true);
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', [], null, true);
+
+    wp_enqueue_script('slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', [], false, true);
+    wp_enqueue_script('idm250-js', get_template_directory_uri() . '/dist/scripts/app.js', ['jquery', 'slick'], false, true);
 }
 
 // When WP performs this action, call our function
