@@ -13,8 +13,8 @@ if (!class_exists('ACF')) {
     add_action(
         'admin_notices',
         function () {
-          echo '<div class="error"><p>ACF not activated. Make sure you activatate it</p></div>';
-      }
+            echo '<div class="error"><p>ACF not activated. Make sure you activate it</p></div>';
+        }
     );
     return;
 }

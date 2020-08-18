@@ -19,4 +19,6 @@ require get_template_directory() . '/lib/setup.php';
 /**
  * Register custom post types
  */
-require get_template_directory() . '/lib/custom-post-type.php';
+require get_template_directory() . '/lib/custom-post-types.php';
+require get_template_directory() . '/lib/custom-taxonomies.php';
+require get_template_directory() . '/lib/acf.php';

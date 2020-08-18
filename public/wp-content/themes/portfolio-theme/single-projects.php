@@ -27,6 +27,25 @@
           <?php if (get_field('technology')): ?>
             <p>Tech Stack: <?php the_field('technology') ?></p>
           <?php endif; ?>
+        
+          <?php
+          // Get the taxonomy's terms
+          $terms = get_terms(
+              [
+                'taxonomy'   => 'technologies',
+                'hide_empty' => false,
+            ]
+          );
+
+          // Check if any term exists
+          if (!empty($terms) && is_array($terms)) {
+              // Run a loop and print them all
+              foreach ($terms as $term) { ?>
+              <a href="<?php echo esc_url(get_term_link($term)) ?>">
+                  <?php echo $term->name; ?>
+              </a><?php
+          }
+          } ?>
 
           <?php
             $link = get_field('project_link');
